@@ -1,0 +1,12 @@
+eureka:
+  instance:
+    hostname: localhost
+    port: 7091
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  cloud:
+    config:
+      override.system-properties: false

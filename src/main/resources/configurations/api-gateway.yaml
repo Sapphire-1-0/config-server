@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: member-management
+          uri: lb:http://MEMBER-MANAGEMENT
+          predicates:
+            - Path=/api/v1/sapphire/member/**
+        - id: premium-billing
+          uri: lb:http://PREMIUM-BILLING
+          predicates:
+            - Path=/api/v1/sapphire/premium-billing/**
+      discovery:
+        locator:
+          enabled: true
+server:
+  port: 7092

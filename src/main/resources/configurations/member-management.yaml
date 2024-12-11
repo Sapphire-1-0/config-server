@@ -1,0 +1,26 @@
+application:
+  config:
+    premium-billing-url: http://localhost:7092/api/v1/sapphire/premium-billing
+spring:
+  data:
+    mongodb:
+      username: admin
+      password: cognizant
+      host: localhost
+      port: 27019
+      database: member
+      authentication-database: admin
+server:
+  port: 7093
+logging:
+  file:
+    name: logs/member-management/spring-boot.log
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+      springframework:
+        data:
+          jpa: INFO
