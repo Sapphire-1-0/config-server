@@ -1,5 +1,5 @@
 server:
-  port: 7095
+  port: 7096
 spring:
   neo4j:
     uri: bolt://localhost:7688
@@ -8,7 +8,7 @@ spring:
       password: password
   data:
     neo4j:
-      database: sapphire.auth
+      database: sapphire.account
 logging:
   file:
-    name: logs/auth-service/spring-boot.log
+    name: logs/account-management/spring-boot.log

@@ -4,12 +4,12 @@ application:
 spring:
   data:
     mongodb:
-      username: admin
-      password: cognizant
+      username: membermanagementadmin
+      password: password
       host: localhost
       port: 27019
-      database: member
-      authentication-database: admin
+      database: member-management
+      authentication-database: member-management
 server:
   port: 7093
 logging:
