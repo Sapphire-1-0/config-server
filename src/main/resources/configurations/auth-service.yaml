@@ -1,5 +1,7 @@
 server:
   port: 7095
+#  servlet:
+#    context-path: /api/v1/sapphire/auth
 spring:
   neo4j:
     uri: bolt://localhost:7688
@@ -12,3 +14,8 @@ spring:
 logging:
   file:
     name: logs/auth-service/spring-boot.log
+application:
+  security:
+    jwt:
+      secret-key: 2b9e785bfd84af3bf177a19177b2a1dd27e971a8d3e7394e66f68d9701a2d6f1
+      expiration: 8640000 # 24 hours

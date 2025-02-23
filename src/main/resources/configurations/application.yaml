@@ -10,3 +10,9 @@ eureka:
   cloud:
     config:
       override.system-properties: false
+application:
+  user-info:
+    user-id: X-USER-ID
+    username: X-USER-NAME
+    service-id: X-SERVICE-ID
+    account-type: X-ACCOUNT-TYPE
