@@ -12,6 +12,10 @@ spring:
     neo4j:
       database: sapphire.auth
 logging:
+  level:
+    org.springframework.data.neo4j.cypher: DEBUG
+    org.neo4j.ogm.drivers.bolt.request: DEBUG
+    org.neo4j.driver: DEBUG
   file:
     name: logs/auth-service/spring-boot.log
 application:

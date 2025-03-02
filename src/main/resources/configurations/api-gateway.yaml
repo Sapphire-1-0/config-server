@@ -1,28 +1,49 @@
 spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gatewaydb
+    username: gatewayadmin
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   cloud:
     gateway:
-      routes:
-        - id: member-management
-          uri: lb:http://MEMBER-MANAGEMENT
-          predicates:
-            - Path=/api/v1/sapphire/member/secured/**, /api/v1/sapphire/account/secured/**
-          filters:
-          - AuthenticationFilter # Apply authentication for secured end points
-        - id: member-management-public
-          uri: lb:http://MEMBER-MANAGEMENT
-          predicates:
-            - Path=/api/v1/sapphire/member/public/**
-          filters: [] # No authentication filter
-        - id: premium-billing
-          uri: lb:http://PREMIUM-BILLING
-          predicates:
-            - Path=/api/v1/sapphire/premium-billing/**
-        - id: auth-service
-          uri: lb:http://AUTH-SERVICE
-          predicates:
-            - Path=/api/v1/sapphire/auth/**
+#      All the routes are configured in the database and will be pulled in dynamically
+#      routes:
+#        - id: member-management
+#          uri: lb:http://MEMBER-MANAGEMENT
+#          predicates:
+#            - Path=/api/v1/sapphire/mms/secured/member/**, /api/v1/sapphire/mms/secured/account/**
+#          filters:
+#          - AuthenticationFilter # Apply authentication for secured end points
+#        - id: member-management-public
+#          uri: lb:http://MEMBER-MANAGEMENT
+#          predicates:
+#            - Path=/api/v1/sapphire/mms/public/**
+#          filters: [] # No authentication filter
+#        - id: premium-billing
+#          uri: lb:http://PREMIUM-BILLING
+#          predicates:
+#            - Path=/api/v1/sapphire/premium-billing/**
+#        - id: auth-service
+#          uri: lb:http://AUTH-SERVICE
+#          predicates:
+#            - Path=/api/v1/sapphire/auth/**
       discovery:
         locator:
           enabled: true
 server:
   port: 7092
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway, health, info
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.security: DEBUG
+
