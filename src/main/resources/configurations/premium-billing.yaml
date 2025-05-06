@@ -11,7 +11,7 @@ spring:
       database: premium-billing
       authentication-database: admin
 server:
-  port: 7094
+  port: 7095
 logging:
   file:
     name: logs/premium-billing/spring-boot.log

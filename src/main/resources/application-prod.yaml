@@ -1,0 +1,9 @@
+# application-prod.yaml
+server:
+  port: 7090
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations

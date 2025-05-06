@@ -28,7 +28,7 @@ increment_version() {
     echo "$major.$minor.$patch-SNAPSHOT"
 }
 
-# Extract the version below <artifactId>member-management</artifactId>
+# Extract the version below <artifactId>config-server</artifactId>
 CURRENT_VERSION=$(awk '
     /<artifactId>config-server<\/artifactId>/ { found=1 }
     found && /<version>/ {
@@ -57,7 +57,7 @@ fi
 # Get the new version with -SNAPSHOT
 NEW_VERSION=$(increment_version "$CURRENT_VERSION" "$INCREMENT_TYPE")
 
-# Update only the version below <artifactId>member-management</artifactId>
+# Update only the version below <artifactId>config-server</artifactId>
 awk -v new_version="$NEW_VERSION" '
     /<artifactId>config-server<\/artifactId>/ { found=1 }
     found && /<version>/ && !updated {

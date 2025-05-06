@@ -4,6 +4,9 @@ spring:
     name: config-server
   profiles:
     active: native
+    group:
+      prod:
+        - native
   cloud:
     config:
       server:

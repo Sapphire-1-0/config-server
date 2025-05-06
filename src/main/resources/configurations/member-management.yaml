@@ -11,7 +11,7 @@ spring:
       database: member-management
       authentication-database: member-management
 server:
-  port: 7093
+  port: 7094
 logging:
   file:
     name: logs/member-management/spring-boot.log
