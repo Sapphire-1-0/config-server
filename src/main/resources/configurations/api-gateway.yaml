@@ -1,11 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/gatewaydb
-    username: gatewayadmin
+    url: jdbc:postgresql://localhost:5432/sapphire_gatewaydb
+    username: sapphire_gateway_admin
     password: password
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_schema: sapphire_gateway
     hibernate:
       ddl-auto: update
     show-sql: true
