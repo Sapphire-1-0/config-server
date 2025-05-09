@@ -1,0 +1,14 @@
+server:
+  port: 7094
+spring:
+  neo4j:
+    uri: ${NEO4J_URI:bolt://localhost:7688}
+    authentication:
+      username: ${NEO4J_USERNAME:neo4j}
+      password: ${NEO4J_PASSWORD:password}
+  data:
+    neo4j:
+      database: sapphire.provider
+logging:
+  file:
+    name: logs/provider-management/spring-boot.log
