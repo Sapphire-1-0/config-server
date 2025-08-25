@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.brihaspathee.sapphire</groupId>
 	<artifactId>config-server</artifactId>
-	<version>1.0.7-SNAPSHOT</version>
+	<version>1.0.8-SNAPSHOT</version>
 	<name>config-server</name>
 	<description>config-server</description>
 	<url>http://github.com/Sapphire-1-0/config-server</url>
